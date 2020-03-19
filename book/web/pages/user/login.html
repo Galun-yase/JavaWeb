@@ -1,13 +1,14 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
-<title>尚硅谷会员登录页面</title>
-<link type="text/css" rel="stylesheet" href="../../static/css/style.css" >
+	<meta charset="UTF-8">
+	<title>尚硅谷会员登录页面</title>
+	<base href="http://localhost:8080/book/">
+	<link type="text/css" rel="stylesheet" href="static/css/style.css" >
 </head>
 <body>
 		<div id="login_header">
-			<img class="logo_img" alt="" src="../../static/img/logo.gif" >
+			<img class="logo_img" alt="" src="static/img/logo.gif" >
 		</div>
 		
 			<div class="login_banner">
@@ -28,7 +29,7 @@
 								<span class="errorMsg">请输入用户名和密码</span>
 							</div>
 							<div class="form">
-								<form action="login_success.html">
+								<form action="loginServlet" method="post">
 									<label>用户名称：</label>
 									<input class="itxt" type="text" placeholder="请输入用户名" autocomplete="off" tabindex="1" name="username" />
 									<br />
