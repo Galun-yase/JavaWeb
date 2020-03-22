@@ -34,10 +34,22 @@ public class BookDaoTest {
         System.out.println( bookDao.queryBookById(20) );
     }
 
+
+
+
     @Test
     public void queryBooks() {
         for (Book queryBook : bookDao.queryBooks()) {
             System.out.println(queryBook);
         }
     }
+
+    @Test
+    public void queryForPageTotalCountByPrice(){
+        System.out.println(bookDao.queryForPageTotalCountByPrice(10,500000));
+        System.out.println(bookDao.queryForPageItemsByPrice(0,4,1,66666));
+    }
+
+
+
 }

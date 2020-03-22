@@ -17,11 +17,21 @@
 
     <servlet>
         <servlet-name>BookServelet</servlet-name>
-        <servlet-class>com.chengzi.web.BookServelet</servlet-class>
+        <servlet-class>com.chengzi.web.BookServlet</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>BookServelet</servlet-name>
         <url-pattern>/manager/bookServlet</url-pattern>
+    </servlet-mapping>
+
+
+    <servlet>
+        <servlet-name>ClientBookServelet</servlet-name>
+        <servlet-class>com.chengzi.web.ClientBookServelet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ClientBookServelet</servlet-name>
+        <url-pattern>/client/bookServlet</url-pattern>
     </servlet-mapping>
     
 </web-app>
