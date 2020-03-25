@@ -4,6 +4,7 @@ import com.chengzi.pojo.Cart;
 import com.chengzi.pojo.User;
 import com.chengzi.service.impl.OrderService;
 import com.chengzi.service.impl.OrderServiceImpl;
+import com.chengzi.utils.JdbcUtils;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
@@ -27,6 +28,7 @@ public class OrderServlet extends BaseServlet {
         Integer userid=loginUser.getId();
         //生成订单
         String orderId=orderService.createOrder(cart,userid);
+
         //req.setAttribute("orderId",orderId);
         req.getSession().setAttribute("orderId",orderId);
         resp.sendRedirect(req.getContextPath()+"/pages/cart/checkout.jsp");

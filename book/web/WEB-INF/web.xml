@@ -63,6 +63,36 @@
         <url-pattern>/orderServlet</url-pattern>
     </servlet-mapping>
 
+    <filter>
+        <filter-name>ManagerFilter</filter-name>
+        <filter-class>com.chengzi.filter.ManagerFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>ManagerFilter</filter-name>
+        <url-pattern>/pages/manager/*</url-pattern>
+        <url-pattern>/manager/bookServlet</url-pattern>
+    </filter-mapping>
+
+    <filter>
+        <filter-name>TransactionFilter</filter-name>
+        <filter-class>com.chengzi.filter.TransactionFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>TransactionFilter</filter-name>
+        <!--表示当前工程下所有请求-->
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
+
+    <error-page>
+        <error-code>500</error-code>
+        <location>/pages/error/error500.jsp</location>
+    </error-page>
+
+    <error-page>
+        <error-code>404</error-code>
+        <location>/pages/error/error404.jsp</location>
+    </error-page>
+
 
 
 </web-app>

@@ -16,6 +16,7 @@ public abstract class BaseServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        req.setCharacterEncoding("UTF-8");
         String action = req.getParameter("action");
 
         try {
@@ -23,6 +24,7 @@ public abstract class BaseServlet extends HttpServlet {
             method.invoke(this,req,resp);
         } catch (Exception e) {
             e.printStackTrace();
+            throw new RuntimeException(e);// 把异常抛给Filter过滤器
         }
     }
 }

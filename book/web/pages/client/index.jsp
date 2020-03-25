@@ -35,7 +35,7 @@
 				</c:if>
 				<c:if test="${not empty sessionScope.user.username}">
 					<span>欢迎<span class="um_span">${sessionScope.user.username}</span>光临尚硅谷书城</span>
-					<a href="order/order.jsp">我的订单</a>
+					<a href="pages/order/order.jsp">我的订单</a>
 					<a href="userServlet?action=logout">注销</a>&nbsp;&nbsp;
 				</c:if>
 &nbsp;&nbsp;
