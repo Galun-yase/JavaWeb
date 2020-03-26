@@ -10,6 +10,19 @@
 		//页面加载完成后
 		$(function(){
 
+			//异步请求用户名是否可用
+			$("#username").blur(function () {
+
+				var username=this.value;
+				$.getJSON("http://localhost:8080/book/userServlet","action=ajaxExistsUsername&username="+username,function (data) {
+					if (data.existsUsername){
+						$("span.errorMsg").text("用户名已存在！");
+					}else {
+						$("span.errorMsg").text("用户名可用！");
+					}
+				})
+
+			});
 
 			$("#code_img").click(function () {
 				this.src="${basePath}Kaptcha.jpg?d="+new Date();

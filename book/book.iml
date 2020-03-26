@@ -36,5 +36,6 @@
     <orderEntry type="library" name="commons-logging-1.1.1" level="project" />
     <orderEntry type="library" name="taglibs-standard-impl-1.2.1" level="project" />
     <orderEntry type="library" name="kaptcha-2.3.2" level="project" />
+    <orderEntry type="library" name="gson-2.2.4" level="project" />
   </component>
 </module>
