@@ -27,22 +27,18 @@ public class OrderServiceImpl implements OrderService {
         //创建唯一订单号
         String orderId=System.currentTimeMillis()+""+userId;
 
-        Order order=new Order(orderId,new Date(),cart.getTotalPrice(),0,userId);
+        Order order=new Order(orderId,userId,new Date());
         orderDao.saveOrder(order);
 
         for (Map.Entry<Integer, CartItem> entry:cart.getItems().entrySet()){
             CartItem cartItem=entry.getValue();
-            OrderItem orderItem=new OrderItem(null,cartItem.getName(),cartItem.getCount(),cartItem.getPrice(),cartItem.getTotalPrice(),orderId);
+            OrderItem orderItem=new OrderItem(null,userId);
 
             //保存订单项到数据库
             orderItemDao.saveOrderItem(orderItem);
 
 
-            //生成订单后对应销量和库存也要更新
-            Book book=bookDao.queryBookById(cartItem.getId());
-            book.setSales(book.getSales()+cartItem.getCount());
-            book.setStock(book.getStock()-cartItem.getCount());
-            bookDao.updateBook(book);
+
         }
 
         cart.clear();

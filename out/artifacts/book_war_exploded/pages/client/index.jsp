@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>书城首页</title>
+<title>豪大大首页</title>
 	<%@ include file="/pages/common/head.jsp"%>
 	<script type="text/javascript">
 		$(function () {
@@ -33,8 +33,8 @@
 <body>
 	
 	<div id="header">
-			<img class="logo_img" alt="" src="static/img/logo.gif" >
-			<span class="wel_word">网上书城</span>
+			<img class="logo_img" alt="" src="static/img/logo.jpg" >
+			<span class="wel_word">豪大大地产</span>
 			<div>
 
 				<c:if test="${empty sessionScope.user.username}">
@@ -42,12 +42,12 @@
 					<a href="pages/user/regist.jsp">注册</a>
 				</c:if>
 				<c:if test="${not empty sessionScope.user.username}">
-					<span>欢迎<span class="um_span">${sessionScope.user.username}</span>光临尚硅谷书城</span>
+					<span>欢迎<span class="um_span">${sessionScope.user.username}</span>光临豪大大地产</span>
 					<a href="pages/order/order.jsp">我的订单</a>
 					<a href="userServlet?action=logout">注销</a>&nbsp;&nbsp;
 				</c:if>
 &nbsp;&nbsp;
-				<a href="pages/cart/cart.jsp">购物车</a>
+				<a href="pages/cart/cart.jsp">交易中心</a>
 				<a href="pages/manager/manager.jsp">后台管理</a>
 			</div>
 	</div>
@@ -80,31 +80,39 @@
 			<c:forEach items="${requestScope.page.items}" var="book">
 			<div class="b_list">
 				<div class="img_div">
-					<img class="book_img" alt="" src="${book.imgPath}" />
+					<img class="book_img" alt="" src="static/img/default.jpg" />
 				</div>
 				<div class="book_info">
 					<div class="book_name">
-						<span class="sp1">书名:</span>
-						<span class="sp2">${book.name}</span>
+						<span class="sp1">房源标题:</span>
+						<span class="sp2">${book.title}</span>
 					</div>
 					<div class="book_author">
-						<span class="sp1">作者:</span>
-						<span class="sp2">${book.author}</span>
+						<span class="sp2">${book.building_num}</span>
+						<span class="sp1">栋|</span>
+						<span class="sp2">${book.building_unit}</span>
+						<span class="sp1">单元|</span>
+						<span class="sp2">${book.building_floor_num}</span>
+						<span class="sp1">室</span>
 					</div>
 					<div class="book_price">
-						<span class="sp1">价格:</span>
-						<span class="sp2">${book.price}</span>
+						<span class="sp1">租金:</span>
+						<span class="sp2">${book.rent}</span>
 					</div>
 					<div class="book_sales">
-						<span class="sp1">销量:</span>
-						<span class="sp2">${book.sales}</span>
+						<span class="sp1">朝向:</span>
+						<span class="sp2">${book.orientation}</span>
 					</div>
 					<div class="book_amount">
-						<span class="sp1">库存:</span>
-						<span class="sp2">${book.stock}</span>
+						<span class="sp1">联系人:</span>
+						<span class="sp2">${book.contact}</span>
+					</div>
+					<div class="book_amount">
+						<span class="sp1">电话:</span>
+						<span class="sp2">${book.mobile}</span>
 					</div>
 					<div class="book_add">
-						<button bookId="${book.id}" class="addToCart">加入购物车</button>
+						<button bookId="1<%--${book.id}--%>" class="addToCart">加入购物车</button>
 					</div>
 				</div>
 			</div>

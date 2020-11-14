@@ -16,7 +16,7 @@ public class WebUtils {
     }
 
     public static int parseInt(String strInt,int defaultValue){
-        if (strInt!=null){
+        if (strInt!=null &&strInt!=""){
             return Integer.parseInt(strInt);
         }else {
             return defaultValue;

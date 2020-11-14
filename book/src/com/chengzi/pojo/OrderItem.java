@@ -5,22 +5,15 @@ import java.math.BigDecimal;
 public class OrderItem {
 
     private Integer id;
-    private String name;
-    private Integer count;
-    private BigDecimal price;
-    private BigDecimal totalPrice;
-    private String orderId;
+    private Integer uid;
+
 
     public OrderItem() {
     }
 
-    public OrderItem(Integer id, String name, Integer count, BigDecimal price, BigDecimal totalPrice, String orderId) {
+    public OrderItem(Integer id,Integer uid) {
         this.id = id;
-        this.name = name;
-        this.count = count;
-        this.price = price;
-        this.totalPrice = totalPrice;
-        this.orderId = orderId;
+        this.uid=uid;
     }
 
     public Integer getId() {
@@ -31,55 +24,11 @@ public class OrderItem {
         this.id = id;
     }
 
-    public String getName() {
-        return name;
+    public Integer getUid() {
+        return uid;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public Integer getCount() {
-        return count;
-    }
-
-    public void setCount(Integer count) {
-        this.count = count;
-    }
-
-    public BigDecimal getPrice() {
-        return price;
-    }
-
-    public void setPrice(BigDecimal price) {
-        this.price = price;
-    }
-
-    public BigDecimal getTotalPrice() {
-        return totalPrice;
-    }
-
-    public void setTotalPrice(BigDecimal totalPrice) {
-        this.totalPrice = totalPrice;
-    }
-
-    public String getOrderId() {
-        return orderId;
-    }
-
-    public void setOrderId(String orderId) {
-        this.orderId = orderId;
-    }
-
-    @Override
-    public String toString() {
-        return "OrderItem{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", count=" + count +
-                ", price=" + price +
-                ", totalPrice=" + totalPrice +
-                ", orderId='" + orderId + '\'' +
-                '}';
+    public void setUid(Integer uid) {
+        this.uid = uid;
     }
 }

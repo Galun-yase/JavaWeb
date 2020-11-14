@@ -5,27 +5,29 @@ import java.math.BigDecimal;
 public class Book {
 
     private Integer id;
-    private String name;
-    private String author;
-    private BigDecimal price;
-    private Integer sales;
-    private Integer stock;
-    private String imgPath="static/img/default.jpg";
+    private String title;
+    private String building_num;
+    private String building_unit;
+    private String building_floor_num;
+    private BigDecimal rent;
+    private String orientation;//朝向
+    private String contact;//联系人
+    private String mobile;//联系电话
+
 
     public Book() {
     }
 
-    public Book(Integer id, String name, String author, BigDecimal price, Integer sales, Integer stock, String imgPath) {
+    public Book(Integer id, String title, String building_num, String building_unit, String building_floor_num, BigDecimal rent, String orientation, String contact, String mobile) {
         this.id = id;
-        this.name = name;
-        this.author = author;
-        this.price = price;
-        this.sales = sales;
-        this.stock = stock;
-
-        if (imgPath!=null && "".equals(imgPath)){
-            this.imgPath = imgPath;
-        }
+        this.title = title;
+        this.building_num = building_num;
+        this.building_unit = building_unit;
+        this.building_floor_num = building_floor_num;
+        this.rent = rent;
+        this.orientation = orientation;
+        this.contact = contact;
+        this.mobile = mobile;
     }
 
     public Integer getId() {
@@ -36,66 +38,67 @@ public class Book {
         this.id = id;
     }
 
-    public String getName() {
-        return name;
+    public String getTitle() {
+        return title;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setTitle(String title) {
+        this.title = title;
     }
 
-    public String getAuthor() {
-        return author;
+    public String getBuilding_num() {
+        return building_num;
     }
 
-    public void setAuthor(String author) {
-        this.author = author;
+    public void setBuilding_num(String building_num) {
+        this.building_num = building_num;
     }
 
-    public BigDecimal getPrice() {
-        return price;
+    public String getBuilding_unit() {
+        return building_unit;
     }
 
-    public void setPrice(BigDecimal price) {
-        this.price = price;
+    public void setBuilding_unit(String building_unit) {
+        this.building_unit = building_unit;
     }
 
-    public Integer getSales() {
-        return sales;
+    public String getBuilding_floor_num() {
+        return building_floor_num;
     }
 
-    public void setSales(Integer sales) {
-        this.sales = sales;
+    public void setBuilding_floor_num(String building_floor_num) {
+        this.building_floor_num = building_floor_num;
     }
 
-    public Integer getStock() {
-        return stock;
+    public BigDecimal getRent() {
+        return rent;
     }
 
-    public void setStock(Integer stock) {
-        this.stock = stock;
+    public void setRent(BigDecimal rent) {
+        this.rent = rent;
     }
 
-    public String getImgPath() {
-        return imgPath;
+    public String getOrientation() {
+        return orientation;
     }
 
-    public void setImgPath(String imgPath) {
-        if (imgPath!=null && "".equals(imgPath)){
-            this.imgPath = imgPath;
-        }
+    public void setOrientation(String orientation) {
+        this.orientation = orientation;
     }
 
-    @Override
-    public String toString() {
-        return "Book{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", author='" + author + '\'' +
-                ", price=" + price +
-                ", sales=" + sales +
-                ", stock=" + stock +
-                ", imgPath='" + imgPath + '\'' +
-                '}';
+    public String getContact() {
+        return contact;
+    }
+
+    public void setContact(String contact) {
+        this.contact = contact;
+    }
+
+    public String getMobile() {
+        return mobile;
+    }
+
+    public void setMobile(String mobile) {
+        this.mobile = mobile;
     }
 }

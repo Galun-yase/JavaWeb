@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html>
 	<meta charset="UTF-8">
-	<title>尚硅谷会员注册页面</title>
+	<title>豪大大会员注册页面</title>
 
 	<%@ include file="/pages/common/head.jsp"%>
 
@@ -96,7 +96,7 @@
 </head>
 <body>
 		<div id="login_header">
-			<img class="logo_img" alt="" src="static/img/logo.gif" >
+			<img class="logo_img" alt="" src="static/img/logo.jpg" >
 		</div>
 		
 			<div class="login_banner">
@@ -109,7 +109,7 @@
 					<div class="login_form">
 						<div class="login_box">
 							<div class="tit">
-								<h1>注册尚硅谷会员</h1>
+								<h1>注册豪大大会员</h1>
 								<span class="errorMsg">
 									${ requestScope.msg }
 								</span>
@@ -121,25 +121,37 @@
 									<input class="itxt" type="text" placeholder="请输入用户名" autocomplete="off" tabindex="1" name="username" id="username"
 										value="${ requestScope.username }"/>
 									<br />
-									<br />
 									<label>用户密码：</label>
 									<input class="itxt" type="password" placeholder="请输入密码" autocomplete="off" tabindex="1" name="password" id="password" />
 									<br />
-									<br />
+
 									<label>确认密码：</label>
 									<input class="itxt" type="password" placeholder="确认密码" autocomplete="off" tabindex="1" name="repwd" id="repwd" />
 									<br />
-									<br />
+
 									<label>电子邮件：</label>
 									<input class="itxt" type="text" placeholder="请输入邮箱地址" autocomplete="off" tabindex="1" name="email" id="email"
 											value="${requestScope.email}" />
 									<br />
+
+
+									<label>手机号码：</label>
+									<input class="itxt" type="text" placeholder="请输入手机号码" autocomplete="off" tabindex="1" name="telphone" id="telphone"
+										   value="${requestScope.telphone}" />
 									<br />
-									<label>验证码：</label>
+
+									<label>身份证号：</label>
+									<input class="itxt" type="text" placeholder="请输入地址" autocomplete="off" tabindex="1" name="idcart" id="idcart"
+										   value="${requestScope.idcart}" />
+									<br />
+
+
+									<label>验 证 码    ：</label>
 									<input class="itxt" type="text" name="code" style="width: 100px;" id="code" />
 									<img id="code_img" alt="" src="Kaptcha.jpg" style="float: right; margin-right: 40px;width: 100px;height: 38px;">
 									<br />
 									<br />
+
 									<input type="submit" value="注册" id="sub_btn" />
 									
 								</form>

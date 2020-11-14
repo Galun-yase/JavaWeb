@@ -80,6 +80,9 @@ public class UserServlet extends BaseServlet {
         String password=req.getParameter("password");
         String email=req.getParameter("email");
         String code=req.getParameter("code");
+        String telphone=req.getParameter("telphone");
+        String idcart=req.getParameter("idcart");
+
 //        User user= WebUtils.copyParamToBean(req.getParameterMap(),new User());
 
         //2、检查验证码
@@ -96,7 +99,7 @@ public class UserServlet extends BaseServlet {
                 //用户名不可用跳转到注册页面
                 req.getRequestDispatcher("/pages/user/regist.jsp").forward(req,resp);
             }else{
-                userService.registUser(new User(null,username,password,email));
+                userService.registUser(new User(null,username,password,email,telphone,idcart));
                 //跳转到注册成功页面
                 req.getRequestDispatcher("/pages/user/regist_success.jsp").forward(req,resp);
             }

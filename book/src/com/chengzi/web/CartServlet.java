@@ -28,7 +28,7 @@ public class CartServlet extends BaseServlet {
         Book book = bookService.queryBookById(id);
 
         //把图书信息转为cartItem
-        CartItem cartItem = new CartItem(book.getId(), book.getName(), 1, book.getPrice(), book.getPrice());
+        CartItem cartItem = new CartItem(book.getId(), book.getTitle(), 1, book.getRent(), book.getRent());
         //添加商品
         Cart cart = (Cart) req.getSession().getAttribute("cart");
         if (cart == null) {
@@ -58,7 +58,7 @@ public class CartServlet extends BaseServlet {
         Book book = bookService.queryBookById(id);
 
         //把图书信息转为cartItem
-        CartItem cartItem = new CartItem(book.getId(), book.getName(), 1, book.getPrice(), book.getPrice());
+        CartItem cartItem = new CartItem(id, book.getTitle(), 1, book.getRent(), book.getRent());
         //添加商品
         Cart cart = (Cart) req.getSession().getAttribute("cart");
         if (cart == null) {
